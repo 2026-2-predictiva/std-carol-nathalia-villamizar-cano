@@ -15,7 +15,7 @@ import pickle
 import pandas as pd  # type: ignore
 from flask import Flask, request  # type: ignore
 
-app = Flask(_name_)
+app = Flask(__name__)
 app.config["SECRET_KEY"] = "you-will-never-guess"
 
 
@@ -46,5 +46,7 @@ def index():
     return str(prediction[0][0])
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     app.run(debug=True)
+    
+    
